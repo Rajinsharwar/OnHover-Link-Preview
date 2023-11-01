@@ -1,0 +1,18 @@
+.on-hover-link-prev-warning {
+    background-color: #23a125;
+    padding: 0.5em;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px 0;
+    padding-right: 20px;
+    max-width: 95%;
+}
+
+.on-hover-link-prev-warning-text {
+  color: white;
+  padding-left: 8px;
+}
+
+.on-hover-link-prev-warning-text a{
+  color: white;
+}
