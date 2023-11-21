@@ -13,7 +13,7 @@ jQuery(document).ready(function ($) {
             return item.trim() + " a";
         }).join(", ");
     }).join(", ");
-    var $links = $('.entry-content a:not(:has(img))');
+    var $links = $('#content, #main-content, .content-wrap, .entry-content a:not(:has(img))');
     if (combinedExclusions !== "") {
         $links = $links.not(combinedExclusions);
     }

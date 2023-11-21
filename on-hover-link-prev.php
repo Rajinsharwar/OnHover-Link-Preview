@@ -9,6 +9,10 @@
  * Text Domain: on-hover-link-prev
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+    exit; // Exit if accessed directly.
+}
+
 /**
  * Enqueue Frontend Scripts.
  *
