@@ -97,7 +97,7 @@ function on_hover_link_prev_plugin_page() {
     <div class="wrap">
         <h2>Link Preview Settings</h2>
         <div class="on-hover-link-prev-warning">
-            <p class="on-hover-link-prev-warning-text"> By default, the preview for the links are shown for all &lt;a&gt; tags under the "entry-content" div class. This excludes the header, footer, nav-menu links etc, also any excludes any Images with a link (&lt;img&gt tag). If you want any specific HTML Elements, Classes, or IDs to be excluded from showing the Link Preview on hover, please enter those below separated by commas. Learn more <a href="https://www.w3schools.com/css/css_selectors.asp" target="_blank" >about the CSS selectors from here</a>.</p>
+            <p class="on-hover-link-prev-warning-text"> By default, the preview for the links are shown for all &lt;a&gt; tags for the pages. This excludes the header, footer, nav-menu links etc, also any excludes any Images with a link (&lt;img&gt tag). If you want any specific HTML Elements, Classes, or IDs to be excluded from showing the Link Preview on hover, please enter those below separated by commas. Learn more <a href="https://www.w3schools.com/css/css_selectors.asp" target="_blank" >about the CSS selectors from here</a>.</p>
         </div>
         <form method="post" action="options.php">
             <?php settings_fields('on_hover_link_prev_settings'); ?>
