@@ -6,6 +6,8 @@
  * Requires at least: 5.9
  * Author: Rajin Sharwar
  * Author URI: https://profiles.wordpress.org/rajinsharwar
+ * License: GPL v2 or later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: on-hover-link-prev
  */
 
