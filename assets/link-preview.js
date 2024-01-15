@@ -18,33 +18,31 @@ jQuery(document).ready(function ($) {
         $links = $links.not(combinedExclusions);
     }
 
-        $links.on("mouseenter", function () {
+    // Preload previews on page load
+    $links.each(function () {
+        var link = $(this).attr('href');
+        preloadPreview(link);
+    });
+
+    $links.on("mouseenter", function () {
         var link = $(this).attr('href');
 
         if (cachedPreviews[link]) {
             showPreview(cachedPreviews[link], this);
         } else {
-            var mshotsURL = link_preview_vars.mshots_url + encodeURIComponent(link) + '?w=' + link_preview_vars.width + '&r=2';
-            var previewHTML = '<div class="on-hover-link-prev"><img src="' + mshotsURL + '" alt="OnHover Link Preview" /></div';
-            $('body').append(previewHTML);
-            var topPosition = $(this).offset().top + $(this).outerHeight() + 5; // Add 5 pixels
-            var $preview = $('.on-hover-link-prev');
-
-            $preview.css({
-                'position': 'absolute',
-                'top': topPosition + 'px',
-                'left': $(this).offset().left + 'px',
-                'background-color': '#fff',
-                'padding': '10px',
-                'box-shadow': '0 0 10px rgba(0, 0, 0, 0.2)',
-                'z-index': '9999',
-                'max-width': '50%'
-            });
-            cachedPreviews[link] = $preview[0].outerHTML;
+            // Load and cache the preview
+            preloadPreview(link);
         }
     }).on("mouseleave", function () {
         $('.on-hover-link-prev').remove();
     });
+
+    function preloadPreview(link) {
+        var mshotsURL = link_preview_vars.mshots_url + encodeURIComponent(link) + '?w=' + link_preview_vars.width + '&r=2';
+        var previewHTML = '<div class="on-hover-link-prev"><img src="' + mshotsURL + '" alt="OnHover Link Preview" /></div';
+        cachedPreviews[link] = previewHTML;
+    }
+
     function showPreview(cachedPreview, linkElement) {
         var topPosition = $(linkElement).offset().top + $(linkElement).outerHeight() + 5; // Add 5 pixels
         var $preview = $(cachedPreview);
@@ -53,7 +51,11 @@ jQuery(document).ready(function ($) {
             'position': 'absolute',
             'top': topPosition + 'px',
             'left': $(linkElement).offset().left + 'px',
-            'z-index': '9999'
+            'background-color': '#fff',
+            'padding': '10px',
+            'box-shadow': '0 0 10px rgba(0, 0, 0, 0.2)',
+            'z-index': '9999',
+            'max-width': '50%'
         });
         $('body').append($preview);
     }

@@ -2,7 +2,7 @@
 /*
  * Plugin Name: OnHover Link Preview
  * Description: WordPress plugin for showing the link preview on mouse-hover.
- * Version: 1.0
+ * Version: 1.0.1
  * Requires at least: 5.9
  * Author: Rajin Sharwar
  * Author URI: https://profiles.wordpress.org/rajinsharwar
@@ -92,9 +92,6 @@ add_action('admin_menu', 'on_hover_link_prev_plugin_menu');
  */
 
 function on_hover_link_prev_plugin_page() {
-    if (isset($_GET['settings-updated']) && $_GET['settings-updated']) {
-        echo '<div id="message" class="updated notice is-dismissible"><p>Settings saved.</p></div>';
-    }
     ?>
     <div class="wrap">
         <h2>Link Preview Settings</h2>
