@@ -2,7 +2,7 @@
 /*
  * Plugin Name: OnHover Link Preview
  * Description: WordPress plugin for showing the link preview on mouse-hover.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Requires at least: 5.9
  * Author: Rajin Sharwar
  * Author URI: https://profiles.wordpress.org/rajinsharwar
@@ -13,6 +13,39 @@
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
+}
+
+if ( ! function_exists( 'onhover_prev' ) ) {
+    // Create a helper function for easy SDK access.
+    function onhover_prev() {
+        global $onhover_prev;
+
+        if ( ! isset( $onhover_prev ) ) {
+            // Include Freemius SDK.
+            require_once dirname(__FILE__) . '/vendor/start.php';
+
+            $onhover_prev = fs_dynamic_init( array(
+                'id'                  => '14753',
+                'slug'                => 'onhover-link-preview',
+                'type'                => 'plugin',
+                'public_key'          => 'pk_c76b26b1558281afe76102fa8184d',
+                'is_premium'          => false,
+                'has_addons'          => false,
+                'has_paid_plans'      => false,
+                'menu'                => array(
+                    'slug'           => 'on-hover-link-prev-settings',
+                    'account'        => false,
+                ),
+            ) );
+        }
+
+        return $onhover_prev;
+    }
+
+    // Init Freemius.
+    onhover_prev();
+    // Signal that SDK was initiated.
+    do_action( 'onhover_prev_loaded' );
 }
 
 /**

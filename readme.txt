@@ -6,7 +6,7 @@ Author URI: https://profiles.wordpress.org/rajinsharwar
 Tags: links, link preview, embeds, blog, mshots, free
 Requires at least: 5.9
 Tested up to: 6.4.2
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -65,8 +65,11 @@ From within WordPress' dashboard:
 
 == Changelog ==
 
-= 1.0 =
-* Initial Commit.
+= 1.0.2 =
+* Added analytics.
 
 = 1.0.1 =
 * Fixed loading bugs, and preloaded scripts.
+
+= 1.0 =
+* Initial Commit.
