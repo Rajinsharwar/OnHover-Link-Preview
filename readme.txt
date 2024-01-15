@@ -32,6 +32,10 @@ https://github.com/Automattic/mShots/blob/master/LICENSE
 
 Yes, absolutely! You can use this plugin free of cost, without any sort of restrictions or pricing.
 
+= I am always seeing a "Generating Preview" screenshot when hovering on my links? =
+
+Well, this is a kind of limitaion from mShots. They need some time to fetch the website's screenshot for the first time, in their server. Once they have a screenshot in their server for that specific link, you will not see that "Generating preview" message anymore. So to get rid of this, after publishing any new post or page, hover on all the links you added there so that mShots generates a preview of that, and your visitors do not see that message anymore.
+
 = I don't like the current preview box's style. =
 
 You can change the styling/design of the preview box easily by applying styles in the ".on-hover-link-prev" class. You can change the background colour, padding, body-shadow etc. If even after applying styles doesn't reflect any changes, try using the "!important" property.
